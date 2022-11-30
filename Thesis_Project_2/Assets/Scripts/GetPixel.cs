@@ -6,20 +6,21 @@ public class GetPixel : MonoBehaviour
 {
     //public Texture2D source;
     //public Texture2D destination;
-    public Texture2D image;
-
+    //public Texture2D image;
+    public Texture2D heightmap;
+    public Vector3 size = new Vector3(100, 10, 100);
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Getimage();
+        //Getimage();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Getimage();
     }
 
     public void Getpixel()
@@ -43,8 +44,8 @@ public class GetPixel : MonoBehaviour
 
     public void Getimage()
     {
-        var x = 0;
-        var y = 0;
+        //var x = 0;
+        //var y = 0;
         //for (int i = 0; i < image.width; i++)
         //    for (int j = 0; j < image.height; j++)
         //    {
@@ -56,8 +57,15 @@ public class GetPixel : MonoBehaviour
         //        else
         //            blackPixels++;
         //    }
-        Debug.Log(image.GetPixel(1,1));
-        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        cube.transform.position = new Vector3(0, 0.5f, 0);
+        
+        //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //cube.transform.position = new Vector3(0, 0.5f, 0);
+        //Debug.Log(image.GetPixel(1, 5));
+
+        int x = Mathf.FloorToInt(transform.position.x / size.x * heightmap.width);
+        int z = Mathf.FloorToInt(transform.position.z / size.z * heightmap.height);
+        Vector3 pos = transform.position;
+        pos.y = heightmap.GetPixel(x, z).grayscale * size.y;
+        transform.position = pos;
     }
 }
