@@ -22,7 +22,7 @@ namespace Mapbox.Unity.MeshGeneration.Data
 		private Texture2D _heightTexture;
 		public float[] HeightData;
 
-		private Texture2D _loadingTexture;
+		public Texture2D _loadingTexture;
 		//keeping track of tile objects to be able to cancel them safely if tile is destroyed before data fetching finishes
 		private List<Tile> _tiles = new List<Tile>();
 		[SerializeField] private float _tileScale;

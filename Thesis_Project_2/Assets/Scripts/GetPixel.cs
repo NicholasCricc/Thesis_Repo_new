@@ -1,3 +1,4 @@
+using Mapbox.Unity.MeshGeneration.Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,20 +8,25 @@ public class GetPixel : MonoBehaviour
     //public Texture2D source;
     //public Texture2D destination;
     //public Texture2D image;
-    public Texture2D heightmap;
-    public Vector3 size = new Vector3(100, 10, 100);
+    //public Texture2D heightmap;
+    //public Vector3 size = new Vector3(100, 10, 100);
+
+    public UnityTile unityTile;
 
 
     // Start is called before the first frame update
     void Start()
     {
         //Getimage();
+        unityTile = GetComponent<UnityTile>();
+
+        Debug.Log(unityTile._loadingTexture);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Getimage();
+        //Getimage();
     }
 
     public void Getpixel()
@@ -60,12 +66,13 @@ public class GetPixel : MonoBehaviour
         
         //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         //cube.transform.position = new Vector3(0, 0.5f, 0);
-        //Debug.Log(image.GetPixel(1, 5));
+        //Debug.Log(heightmap.GetPixel(x, z));
 
-        int x = Mathf.FloorToInt(transform.position.x / size.x * heightmap.width);
-        int z = Mathf.FloorToInt(transform.position.z / size.z * heightmap.height);
-        Vector3 pos = transform.position;
-        pos.y = heightmap.GetPixel(x, z).grayscale * size.y;
-        transform.position = pos;
+        //int x = Mathf.FloorToInt(transform.position.x / size.x * heightmap.width);
+        //int z = Mathf.FloorToInt(transform.position.z / size.z * heightmap.height);
+        //Vector3 pos = transform.position;
+        //pos.y = heightmap.GetPixel(x, z).grayscale * size.y;
+        //transform.position = pos;
+        //Debug.Log(heightmap.GetPixel(x, z));
     }
 }
