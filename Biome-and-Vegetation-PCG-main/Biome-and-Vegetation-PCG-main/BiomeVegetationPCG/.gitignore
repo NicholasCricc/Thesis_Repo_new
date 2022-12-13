@@ -1,7 +1,34 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
-#
+
+# Excluding Firebase SDK
+/[Aa]ssets/Firebase/Editor Default Resources/
+/[Aa]ssets/ExternalDependencyManager/
+/[Aa]ssets/Parse/
+/[Aa]ssets/StreamingAssets/
+/[Aa]ssets/Firebase/
+/[Aa]ssets/Plugins/
+/[Aa]ssets/Editor Default Resources/Firebase/
+
+
+/[Aa]ssets/Firebase.meta
+/[Aa]ssets/Plugins.meta
+/[Aa]ssets/ExternalDependencyManager.meta
+/[Aa]ssets/Firebase/Editor Default Resources.meta
+/[Aa]ssets/Editor Default Resources/Firebase.meta
+/[Aa]ssets/Parse.meta
+/[Aa]ssets/StreamingAssets.meta
+
+# Excluding Google API Key
+/[Aa]ssets/GoogleService-Info.plist
+/[Aa]ssets/GoogleService-Info.plist.meta
+/[Aa]ssets/google-services.json
+/[Aa]ssets/google-services.json.meta
+/[Aa]ssets/StreamingAssets/google-services-desktop.json
+/[Aa]ssets/StreamingAssets/google-services-desktop.json.meta
+
+# Excluding Unity Files
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -9,13 +36,8 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
-
-# MemoryCaptures can get excessive in size.
-# They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
-
-# Asset meta data should only be ignored when the corresponding asset is also ignored
-!/[Aa]ssets/**/*.meta
+/[Rr]ecordings/
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
@@ -59,6 +81,7 @@ sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
+*.app
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -69,3 +92,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Excluding MacOS files
+.DS_Store
