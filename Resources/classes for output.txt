@@ -1,0 +1,10 @@
+0 - cropland
+1 - forest
+2 - grass land
+3 - greenhouses
+4 - other (quarries bare land)
+5 - sea
+6 - rocks
+7 - built up
+8 - vineyards
+9 - wet lands

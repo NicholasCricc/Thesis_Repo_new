@@ -1,0 +1,2 @@
+Style URL: mapbox://styles/nichalie1972/cla9duknm003914qbghdvctxn
+Access token: pk.eyJ1IjoibmljaGFsaWUxOTcyIiwiYSI6ImNsNzUxdmM0bTA1NWozd3A0MTNtdnJlaTQifQ.VsADtHI-6M6CTGEeShMRIA

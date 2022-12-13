@@ -1,0 +1,7 @@
+TIF to BIL Conversion:
+
+-of EHdr -ot UInt16 -scale MIN MAX 0 65535 -outsize 4097 4097 -r bilinear
+
+TIF to JPG Conversion:
+
+-of JPEG -b 1 -b 2 -b 3 -outsize 8192 8192 -r cubic -co QUALITY=95
