@@ -131,7 +131,9 @@ public class EndlessTerrain : MonoBehaviour{
             this.mapData = mapData;
             mapDataReceived = true;
 
-            Texture2D texture = TextureGenerator.TextureFromColorMap(mapData.biomeMap, MapGenerator.mapChunkSize, MapGenerator.mapChunkSize);
+            Texture2D texture = new Texture2D(MapGenerator.mapChunkSize, MapGenerator.mapChunkSize);
+
+            texture = Resources.Load("Malta_Classes_Final") as Texture2D; //TextureGenerator.TextureFromColorMap(mapData.biomeMap, MapGenerator.mapChunkSize, MapGenerator.mapChunkSize);
             meshRenderer.material.mainTexture = texture;
 
             this.vegetations = new List<GameObject>(mapData.poissonDiskSamples.Count);
