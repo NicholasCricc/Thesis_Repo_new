@@ -121,6 +121,7 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
+    //Generating height map
     MapData GenerateMapData(Vector2 center) {
 
         float[,] heightMap = Noise.GenerateNoiseMap(seedHeight, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode);
