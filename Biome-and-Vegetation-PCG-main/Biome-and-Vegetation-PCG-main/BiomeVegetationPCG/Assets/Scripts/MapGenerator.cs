@@ -53,6 +53,17 @@ public class MapGenerator : MonoBehaviour
     Queue<MapThreadInfo<MapData>> mapDataThreadInfoQueue = new Queue<MapThreadInfo<MapData>>();
     Queue<MapThreadInfo<MeshData>> meshDataThreadInfoQueue = new Queue<MapThreadInfo<MeshData>>();
 
+    public Terrain myHeightMap;
+    private float[,] myFloatHieghtMap;
+    public void Awake()
+    {
+        TerrainData tData = myHeightMap.terrainData;
+        int xResolution = tData.heightmapWidth;
+        int zResolution = tData.heightmapHeight;
+        myFloatHieghtMap = myHeightMap.terrainData.GetHeights(0, 0, xResolution, zResolution);
+        //myHeightMap = Resources.Load<Texture2D>("Malta_Terrain");
+        //Debug.Log(myHeightMap.terrainData.GetHeights);
+    }
 
     public void DrawMapInEditor() {
         MapData mapData = GenerateMapData(UnityEngine.Vector2.zero);
@@ -121,10 +132,37 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
+    private uint Color32ToUInt(Color32 color)
+    {
+        return (uint)((color.a << 24) | (color.r << 16) | (color.g << 8) | (color.b << 0));
+    }
+
+    private float[,] Texture2DToUIntArray(Texture2D texture)
+    {
+        Color32 c;
+        int width = texture.width;
+        int height = texture.height;
+
+        float[,] pixels = new float[width , height];
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                pixels[x, y] = texture.GetPixel(x, y).grayscale;
+            }
+        }
+
+        return pixels;
+    }
+
     //Generating height map
     MapData GenerateMapData(Vector2 center) {
 
-        float[,] heightMap = Noise.GenerateNoiseMap(seedHeight, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode);
+
+        float[,] heightMap = myFloatHieghtMap; //Mine code
+
+        //float[,] heightMap = Noise.GenerateNoiseMap(seedHeight, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode); //His Code
 
         float[,] moistureMap = Noise.GenerateNoiseMap(seedMoisture, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode);
 
