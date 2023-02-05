@@ -58,8 +58,8 @@ public class MapGenerator : MonoBehaviour
     public void Awake()
     {
         TerrainData tData = myHeightMap.terrainData;
-        int xResolution = tData.heightmapWidth;
-        int zResolution = tData.heightmapHeight;
+        int xResolution = tData.heightmapResolution;
+        int zResolution = tData.heightmapResolution;
         myFloatHieghtMap = myHeightMap.terrainData.GetHeights(0, 0, xResolution, zResolution);
         //myHeightMap = Resources.Load<Texture2D>("Malta_Terrain");
         //Debug.Log(myHeightMap.terrainData.GetHeights);
@@ -159,8 +159,7 @@ public class MapGenerator : MonoBehaviour
     //Generating height map
     MapData GenerateMapData(Vector2 center) {
 
-
-        float[,] heightMap = myFloatHieghtMap; //Mine code
+        float[,] heightMap = myFloatHieghtMap; //My code
 
         //float[,] heightMap = Noise.GenerateNoiseMap(seedHeight, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode); //His Code
 
