@@ -13,7 +13,7 @@ public class MapGenerator : MonoBehaviour
     public Noise.NormalizeMode normalizeMode;
 
     // Using 241 because, 240 can be divided by 2, 4, 6, 8, 10, 12
-    public const int mapChunkSize = 451;
+    public const int mapChunkSize = 513;
     [Range(0, 6)]
     public int editorPreviewLOD;
 
@@ -187,9 +187,9 @@ public class MapGenerator : MonoBehaviour
     MapData GenerateMapData(Vector2 center)
     {
 
-        //float[,] heightMap = myFloatHieghtMap; //My code
+        float[,] heightMap = myFloatHieghtMap; //My code
 
-        float[,] heightMap = Noise.GenerateNoiseMap(seedHeight, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode); //His Code
+        //float[,] heightMap = Noise.GenerateNoiseMap(seedHeight, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode); //His Code
 
         float[,] moistureMap = Noise.GenerateNoiseMap(seedMoisture, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode);
 
