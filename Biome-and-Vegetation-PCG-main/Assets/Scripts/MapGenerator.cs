@@ -7,7 +7,7 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     
-    public enum DrawMode { None, HeightMap, MoistureMap, BiomeColorMap, Mesh, VegetationMap };
+    public enum DrawMode { None, HeightMap, MoistureMap, BiomeColorMap, Mesh, VegetationMap, MyFloatHieghtMap };
     public DrawMode drawMode;
 
     public Noise.NormalizeMode normalizeMode;
@@ -75,6 +75,10 @@ public class MapGenerator : MonoBehaviour
         else if (drawMode == DrawMode.HeightMap) {
             display.DrawTexture(TextureGenerator.TextureFromHeightMap(mapData.heightMap));
         }
+        //else if (drawMode == DrawMode.MyFloatHieghtMap) 
+        //{
+        //    display.DrawTexture(TextureGenerator.TextureFromHeightMap(mapData.myFloatHieghtMap));
+        //}//Mine
         else if (drawMode == DrawMode.MoistureMap) {
             display.DrawTexture(TextureGenerator.TextureFromHeightMap(mapData.moistureMap));
         }
@@ -85,8 +89,9 @@ public class MapGenerator : MonoBehaviour
             display.DrawMesh(MeshGenerator.GenerateTerrainMesh(mapData.heightMap, meshHeightMultiplier, meshHeightCurve, editorPreviewLOD), TextureGenerator.TextureFromColorMap(mapData.biomeMap, mapChunkSize, mapChunkSize));
         }
         else if (drawMode == DrawMode.VegetationMap) {
-            display.DrawTexture(TextureGenerator.TextureFromVegetationList(mapData.poissonDiskSamples, mapData.heightMap.GetLength(0), mapData.heightMap.GetLength(1)));
-        }
+            display.DrawTexture(TextureGenerator.TextureFromVegetationList(new List<PoissonSampleData>(), mapData.heightMap.GetLength(0), mapData.heightMap.GetLength(1)));
+        } // Mine
+
     }
 
     public void RequestMapData(UnityEngine.Vector2 center, Action<MapData> callback) {
@@ -157,7 +162,8 @@ public class MapGenerator : MonoBehaviour
     }
 
     //Generating height map
-    MapData GenerateMapData(Vector2 center) {
+    MapData GenerateMapData(Vector2 center)
+    {
 
         float[,] heightMap = myFloatHieghtMap; //My code
 
@@ -171,14 +177,18 @@ public class MapGenerator : MonoBehaviour
         // Depending on heightMap and moistureMap
         // Resulting in a biomeMap
 
-        for (int y = 0; y < mapChunkSize; y++) {
-            for (int x = 0; x < mapChunkSize; x++) {
-                
+        for (int y = 0; y < mapChunkSize; y++)
+        {
+            for (int x = 0; x < mapChunkSize; x++)
+            {
+
                 float currentHeight = heightMap[x, y];
                 float currentMoisture = moistureMap[x, y];
 
-                for (int i = 0; i < regions.Length; i++) {
-                    if (currentHeight >= regions[i].height && currentMoisture >= regions[i].moisture) {
+                for (int i = 0; i < regions.Length; i++)
+                {
+                    if (currentHeight >= regions[i].height && currentMoisture >= regions[i].moisture)
+                    {
                         biomeMap[y * mapChunkSize + x] = regions[i].color;
                     }
                 }
@@ -194,20 +204,43 @@ public class MapGenerator : MonoBehaviour
 
         List<PoissonSampleData> poissonDiskSamples = new List<PoissonSampleData>();
 
-        for (int i = 0; i < regions.Length; i++) {
+        for (int i = 0; i < regions.Length; i++)
+        {
             List<Vector2> poissonDiskSamplesRegion = Noise.GeneratePoissonDiskSampling(seedVegetation, mapChunkSize, mapChunkSize, newPointsCount, regions[i].minDistance);
 
-            for (int k = 0; k < poissonDiskSamplesRegion.Count; k++) {
+            for (int k = 0; k < poissonDiskSamplesRegion.Count; k++)
+            {
 
                 Color biomeColor = biomeMap[(int)poissonDiskSamplesRegion[k].y * mapChunkSize + (int)poissonDiskSamplesRegion[k].x];
 
-                if (biomeColor.Equals(regions[i].color)) {
+                if (biomeColor.Equals(regions[i].color))
+                {
                     poissonDiskSamples.Add(new PoissonSampleData(poissonDiskSamplesRegion[k], regions[i].vegetationPrefab));
                 }
             }
         }
 
-        return new MapData(heightMap, moistureMap, biomeMap, poissonDiskSamples, meshHeightCurve, meshHeightMultiplier);
+        return new MapData(myFloatHieghtMap, heightMap, moistureMap, biomeMap, poissonDiskSamples, meshHeightCurve, meshHeightMultiplier);
+
+    }
+
+    MapData GenerateMapDataMine(Vector2 center)
+    {
+
+        float[,] heightMap = myFloatHieghtMap; //My code
+
+
+        for (int y = 0; y < mapChunkSize; y++)
+        {
+            for (int x = 0; x < mapChunkSize; x++)
+            {
+
+                float currentHeight = heightMap[x, y];
+
+            }
+        }
+
+        return new MapData(myFloatHieghtMap, heightMap, new float[mapChunkSize,mapChunkSize], new Color[mapChunkSize], new List<PoissonSampleData>(), meshHeightCurve, meshHeightMultiplier);
 
     }
 
@@ -245,6 +278,7 @@ public struct TerrainType {
 
 
 public struct MapData {
+    public readonly float[,] myFloatHieghtMap;
     public readonly float[,] heightMap;
     public readonly float[,] moistureMap;
     public readonly Color[] biomeMap;
@@ -252,7 +286,8 @@ public struct MapData {
     public readonly AnimationCurve heightCurve;
     public readonly float heightMultiplier;
 
-    public MapData(float[,] heightMap, float[,] moistureMap, Color[] biomeMap, List<PoissonSampleData> poissonDiskSamples, AnimationCurve heightCurve, float heightMultiplier) {
+    public MapData(float[,] myFloatHieghtMap, float[,] heightMap, float[,] moistureMap, Color[] biomeMap, List<PoissonSampleData> poissonDiskSamples, AnimationCurve heightCurve, float heightMultiplier) {
+        this.myFloatHieghtMap = myFloatHieghtMap;
         this.heightMap = heightMap;
         this.moistureMap = moistureMap;
         this.biomeMap = biomeMap;

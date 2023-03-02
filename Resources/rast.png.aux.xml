@@ -1,0 +1,58 @@
+<PAMDataset>
+  <SRS dataAxisToSRSAxisMapping="2,1">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</SRS>
+  <GeoTransform>  1.4182916666666666e+01,  3.9125000000000121e-01,  0.0000000000000000e+00,  3.6082083333333337e+01,  0.0000000000000000e+00, -2.9533333333333900e-01</GeoTransform>
+  <PAMRasterBand band="1">
+    <GDALRasterAttributeTable tableType="thematic">
+      <FieldDefn index="0">
+        <Name>min</Name>
+        <Type>1</Type>
+        <Usage>3</Usage>
+      </FieldDefn>
+      <FieldDefn index="1">
+        <Name>max</Name>
+        <Type>1</Type>
+        <Usage>4</Usage>
+      </FieldDefn>
+      <FieldDefn index="2">
+        <Name>redmin</Name>
+        <Type>0</Type>
+        <Usage>10</Usage>
+      </FieldDefn>
+      <FieldDefn index="3">
+        <Name>redmax</Name>
+        <Type>0</Type>
+        <Usage>14</Usage>
+      </FieldDefn>
+      <FieldDefn index="4">
+        <Name>greenmin</Name>
+        <Type>0</Type>
+        <Usage>11</Usage>
+      </FieldDefn>
+      <FieldDefn index="5">
+        <Name>greenmax</Name>
+        <Type>0</Type>
+        <Usage>15</Usage>
+      </FieldDefn>
+      <FieldDefn index="6">
+        <Name>bluemin</Name>
+        <Type>0</Type>
+        <Usage>12</Usage>
+      </FieldDefn>
+      <FieldDefn index="7">
+        <Name>bluemax</Name>
+        <Type>0</Type>
+        <Usage>16</Usage>
+      </FieldDefn>
+      <Row index="0">
+        <F>10</F>
+        <F>10</F>
+        <F>252</F>
+        <F>252</F>
+        <F>231</F>
+        <F>231</F>
+        <F>36</F>
+        <F>36</F>
+      </Row>
+    </GDALRasterAttributeTable>
+  </PAMRasterBand>
+</PAMDataset>
