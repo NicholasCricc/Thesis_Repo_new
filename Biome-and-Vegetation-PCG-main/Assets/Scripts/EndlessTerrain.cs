@@ -133,7 +133,8 @@ public class EndlessTerrain : MonoBehaviour{
 
             Texture2D texture = new Texture2D(MapGenerator.mapChunkSize, MapGenerator.mapChunkSize);
 
-            texture = Resources.Load("Boxed_OutputTIF_Colour") as Texture2D; 
+            texture = Resources.Load("Boxed_OutputTIF_Colour") as Texture2D;
+            
             //TextureGenerator.TextureFromColorMap(mapData.biomeMap, MapGenerator.mapChunkSize, MapGenerator.mapChunkSize);
             meshRenderer.material.mainTexture = texture;
 
@@ -147,7 +148,7 @@ public class EndlessTerrain : MonoBehaviour{
 
             int width = mapData.heightMap.GetLength(0);
             int height = mapData.heightMap.GetLength(1);
-
+            Debug.Log(width);
             float topLeftX = (width - 1) / -2f;
             float topLeftZ = (height - 1) / 2f;
 
