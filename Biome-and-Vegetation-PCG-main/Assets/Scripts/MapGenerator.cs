@@ -203,11 +203,11 @@ public class MapGenerator : MonoBehaviour
     //Generating height map
     MapData GenerateMapData(Vector2 center, Color[,] mytextureColors)
     {
-        
-        float[,] heightMap = RotateMatrix(newHeightMap,513); //My code
-        
-       // float[,] heightMap = Noise.GenerateNoiseMap(seedHeight, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode); //His Code
-        
+
+        //  float[,] heightMap = RotateMatrix(newHeightMap,513); //My code
+        float[,] heightMap = RotateMatrix(newHeightMap, 513); //My code
+                                                              // float[,] heightMap = Noise.GenerateNoiseMap(seedHeight, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode); //His Code
+
         float[,] moistureMap = Noise.GenerateNoiseMap(seedMoisture, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode);
 
         Color[] biomeMap = new Color[mapChunkSize * mapChunkSize];
@@ -216,9 +216,9 @@ public class MapGenerator : MonoBehaviour
         // Depending on heightMap and moistureMap
         // Resulting in a biomeMap
         
-        for (int y = 0; y < mapChunkSize; y++)
+        for (int y = 0; y < mapChunkSize-1; y++)
         {
-            for (int x = 0; x < mapChunkSize; x++)
+            for (int x = 0; x < mapChunkSize-1; x++)
             {
 
                 float currentHeight = heightMap[x, y] * 100;
@@ -229,8 +229,11 @@ public class MapGenerator : MonoBehaviour
                 {
                     if (currentHeight >= regions[i].height && currentMoisture >= regions[i].moisture)
                     {
-                        biomeMap[y * mapChunkSize + x] = mytextureColors[x * (int)(mytextureColors.GetLength(1) / mapChunkSize), y * (int)(mytextureColors.GetLength(0) / mapChunkSize)]; //regions[i].color;   //REPLACED WITH MALTA TEXTURE
-                    //    Debug.Log(biomeMap[y * mapChunkSize + x]);
+                        int checkoffset = (mytextureColors.GetLength(1)/(mapChunkSize-1));
+                    //    biomeMap[y * x] = mytextureColors[x * (int)(mytextureColors.GetLength(1) / mapChunkSize), y * (int)(mytextureColors.GetLength(0) / mapChunkSize)]; //regions[i].color;   //REPLACED WITH MALTA TEXTURE
+                      biomeMap[y * mapChunkSize + x] = mytextureColors[x * (mytextureColors.GetLength(1) / (mapChunkSize-1)), y * (mytextureColors.GetLength(0) / (mapChunkSize-1))]; //regions[i].color;   //REPLACED WITH MALTA TEXTURE
+                      
+                    //   Debug.Log(biomeMap[y * mapChunkSize + x]);
                     }
                 }
 
@@ -253,9 +256,10 @@ public class MapGenerator : MonoBehaviour
             for (int k = 0; k < poissonDiskSamplesRegion.Count; k++)
             {
 
+              //  Color biomeColor = biomeMap[(int)poissonDiskSamplesRegion[k].y * (int)poissonDiskSamplesRegion[k].x];
                 Color biomeColor = biomeMap[(int)poissonDiskSamplesRegion[k].y * mapChunkSize + (int)poissonDiskSamplesRegion[k].x];
               //  Debug.Log("Biome: " + ((Color32)biomeColor).ToString());
-             //   Debug.Log("Region: " + ((Color32)regions[i].color).ToString());
+               // Debug.Log("Region: " + ((Color32)regions[i].color).ToString());
                 if (((Color32)biomeColor).Equals((Color32)regions[i].color))
                 {
                     poissonDiskSamples.Add(new PoissonSampleData(poissonDiskSamplesRegion[k], regions[i].vegetationPrefab));

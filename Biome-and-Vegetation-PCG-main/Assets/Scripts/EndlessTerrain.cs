@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EndlessTerrain : MonoBehaviour{
 
-    const float scale = 1f;
+    public static float scale = 1f;
 
     const float viewerMoveThresholdForChunkUpdate = 25f;
     const float sqrViewerMoveThresholdForChunkUpdate = viewerMoveThresholdForChunkUpdate * viewerMoveThresholdForChunkUpdate;
@@ -105,9 +105,9 @@ public class EndlessTerrain : MonoBehaviour{
             meshObject = new GameObject("Terrain Chunk");
             meshRenderer = meshObject.AddComponent<MeshRenderer>();
             meshFilter = meshObject.AddComponent<MeshFilter>();
-
+            
             meshRenderer.material = material;
-
+            
             meshObject.transform.position = positionV3 * scale;
             meshObject.transform.parent = parent;
             meshObject.transform.localScale = Vector3.one * scale;
@@ -137,7 +137,7 @@ public class EndlessTerrain : MonoBehaviour{
             
             //TextureGenerator.TextureFromColorMap(mapData.biomeMap, MapGenerator.mapChunkSize, MapGenerator.mapChunkSize);
             meshRenderer.material.mainTexture = texture;
-
+           
             this.vegetations = new List<GameObject>(mapData.poissonDiskSamples.Count);
             CreateVegetation();
 
