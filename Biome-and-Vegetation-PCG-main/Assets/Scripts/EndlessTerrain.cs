@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EndlessTerrain : MonoBehaviour{
 
-    const float scale = 1f;
+    public static float scale = 1f;
 
     const float viewerMoveThresholdForChunkUpdate = 25f;
     const float sqrViewerMoveThresholdForChunkUpdate = viewerMoveThresholdForChunkUpdate * viewerMoveThresholdForChunkUpdate;
@@ -105,9 +105,9 @@ public class EndlessTerrain : MonoBehaviour{
             meshObject = new GameObject("Terrain Chunk");
             meshRenderer = meshObject.AddComponent<MeshRenderer>();
             meshFilter = meshObject.AddComponent<MeshFilter>();
-
+            
             meshRenderer.material = material;
-
+            
             meshObject.transform.position = positionV3 * scale;
             meshObject.transform.parent = parent;
             meshObject.transform.localScale = Vector3.one * scale;
@@ -133,10 +133,12 @@ public class EndlessTerrain : MonoBehaviour{
 
             Texture2D texture = new Texture2D(MapGenerator.mapChunkSize, MapGenerator.mapChunkSize);
 
-            texture = Resources.Load("Boxed_OutputTIF_Colour") as Texture2D; 
+            texture = Resources.Load("Boxed_OutputTIF_Colour") as Texture2D;
+            
             //TextureGenerator.TextureFromColorMap(mapData.biomeMap, MapGenerator.mapChunkSize, MapGenerator.mapChunkSize);
             meshRenderer.material.mainTexture = texture;
-
+            meshRenderer.material.mainTextureScale = new Vector2(1f, -1f);
+           
             this.vegetations = new List<GameObject>(mapData.poissonDiskSamples.Count);
             CreateVegetation();
 
@@ -147,7 +149,7 @@ public class EndlessTerrain : MonoBehaviour{
 
             int width = mapData.heightMap.GetLength(0);
             int height = mapData.heightMap.GetLength(1);
-
+            Debug.Log(width);
             float topLeftX = (width - 1) / -2f;
             float topLeftZ = (height - 1) / 2f;
 

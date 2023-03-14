@@ -7,7 +7,7 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     
-    public enum DrawMode { None, HeightMap, MoistureMap, BiomeColorMap, Mesh, VegetationMap, MyFloatHieghtMap };
+    public enum DrawMode { None, HeightMap, MoistureMap, BiomeColorMap, Mesh, VegetationMap};
     public DrawMode drawMode;
 
     public Noise.NormalizeMode normalizeMode;
@@ -54,19 +54,63 @@ public class MapGenerator : MonoBehaviour
     Queue<MapThreadInfo<MeshData>> meshDataThreadInfoQueue = new Queue<MapThreadInfo<MeshData>>();
 
     public Terrain myHeightMap;
-    private float[,] myFloatHieghtMap;
+    private float[,] newHeightMap;
+    Texture2D loadTexture;
+    Color[,] textureColors;
     public void Awake()
     {
         TerrainData tData = myHeightMap.terrainData;
         int xResolution = tData.heightmapResolution;
         int zResolution = tData.heightmapResolution;
-        myFloatHieghtMap = myHeightMap.terrainData.GetHeights(0, 0, xResolution, zResolution);
+        newHeightMap = tData.GetHeights(0, 0, xResolution, zResolution);
+
+        loadTexture = Resources.Load("Boxed_OutputTIF_Colour") as Texture2D;
+        //flippedTexture = loadTexture.Rotate(RotateMode.Rotate180);
+        Color[,] textureColors_flipped = Texture2DToColor(loadTexture);
+
+        int rows = textureColors_flipped.GetLength(0); 
+        int cols = textureColors_flipped.GetLength(1);
+        textureColors = new Color[rows,cols];
+        //for (int i = 0; i < rows; i++)
+        //{
+        //    for (int j = 0; j < cols; j++)
+        //    {
+        //        textureColors[i, j] = new Color(0,0,0);
+        //    }
+        //}
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                textureColors[i, j] = textureColors_flipped[i, cols - 1 - j];
+            }
+        }
         //myHeightMap = Resources.Load<Texture2D>("Malta_Terrain");
         //Debug.Log(myHeightMap.terrainData.GetHeights);
     }
 
+    public Color[,] Texture2DToColor(Texture2D texture)
+    {
+        //Color32 c;
+        int width = texture.width;
+        int height = texture.height;
+
+        Color[,] pixels = new Color[width, height];
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                pixels[x, y] = texture.GetPixel(x, y);
+            }
+        }
+
+        return pixels;
+    }
+
+
     public void DrawMapInEditor() {
-        MapData mapData = GenerateMapData(UnityEngine.Vector2.zero);
+        MapData mapData = GenerateMapData(UnityEngine.Vector2.zero, textureColors);
         MapDisplay display = FindObjectOfType<MapDisplay>();
 
         if (drawMode == DrawMode.None) {
@@ -75,10 +119,10 @@ public class MapGenerator : MonoBehaviour
         else if (drawMode == DrawMode.HeightMap) {
             display.DrawTexture(TextureGenerator.TextureFromHeightMap(mapData.heightMap));
         }
-        //else if (drawMode == DrawMode.MyFloatHieghtMap) 
-        //{
-        //    display.DrawTexture(TextureGenerator.TextureFromHeightMap(mapData.myFloatHieghtMap));
-        //}//Mine
+      //  else if (drawMode == DrawMode.MyFloatHeightMap) 
+      //  {
+      //      display.DrawTexture(TextureGenerator.TextureFromHeightMap(mapData.myFloatHeightMap));
+     //   }//Mine
         else if (drawMode == DrawMode.MoistureMap) {
             display.DrawTexture(TextureGenerator.TextureFromHeightMap(mapData.moistureMap));
         }
@@ -102,7 +146,7 @@ public class MapGenerator : MonoBehaviour
     }
 
     void MapDataThread(UnityEngine.Vector2 center, Action<MapData> callback) {
-        MapData mapData = GenerateMapData(center);
+        MapData mapData = GenerateMapData(center, textureColors);
         lock (mapDataThreadInfoQueue) {
             mapDataThreadInfoQueue.Enqueue(new MapThreadInfo<MapData>(callback, mapData));
         }
@@ -161,13 +205,28 @@ public class MapGenerator : MonoBehaviour
         return pixels;
     }
 
+    static float[,] RotateMatrix(float[,] matrix, int n)
+    {
+        float[,] ret = new float[n, n];
+
+        for (int i = 0; i < n; ++i)
+        {
+            for (int j = 0; j < n; ++j)
+            {
+                ret[i, j] = matrix[n - j - 1, i];
+            }
+        }
+
+        return ret;
+    }
+
     //Generating height map
-    MapData GenerateMapData(Vector2 center)
+    MapData GenerateMapData(Vector2 center, Color[,] mytextureColors)
     {
 
-        float[,] heightMap = myFloatHieghtMap; //My code
-
-        //float[,] heightMap = Noise.GenerateNoiseMap(seedHeight, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode); //His Code
+        //  float[,] heightMap = RotateMatrix(newHeightMap,513); //My code
+        float[,] heightMap = RotateMatrix(newHeightMap, 513); //My code
+                                                              // float[,] heightMap = Noise.GenerateNoiseMap(seedHeight, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode); //His Code
 
         float[,] moistureMap = Noise.GenerateNoiseMap(seedMoisture, mapChunkSize, mapChunkSize, noiseScale, octaves, persistance, lacunarity, center + offset, normalizeMode);
 
@@ -176,26 +235,31 @@ public class MapGenerator : MonoBehaviour
         // Getting colorMap for each 'pixel' in the texture
         // Depending on heightMap and moistureMap
         // Resulting in a biomeMap
-
-        for (int y = 0; y < mapChunkSize; y++)
+        
+        for (int y = 0; y < mapChunkSize-1; y++)
         {
-            for (int x = 0; x < mapChunkSize; x++)
+            for (int x = 0; x < mapChunkSize-1; x++)
             {
 
-                float currentHeight = heightMap[x, y];
+                float currentHeight = heightMap[x, y] * 100;
+                //Debug.Log(currentHeight);
                 float currentMoisture = moistureMap[x, y];
-
+               
                 for (int i = 0; i < regions.Length; i++)
                 {
                     if (currentHeight >= regions[i].height && currentMoisture >= regions[i].moisture)
                     {
-                        biomeMap[y * mapChunkSize + x] = regions[i].color;
+                        int checkoffset = (mytextureColors.GetLength(1)/(mapChunkSize-1));
+                    //    biomeMap[y * x] = mytextureColors[x * (int)(mytextureColors.GetLength(1) / mapChunkSize), y * (int)(mytextureColors.GetLength(0) / mapChunkSize)]; //regions[i].color;   //REPLACED WITH MALTA TEXTURE
+                      biomeMap[y * mapChunkSize + x] = mytextureColors[x * (mytextureColors.GetLength(1) / (mapChunkSize-1)), y * (mytextureColors.GetLength(0) / (mapChunkSize-1))]; //regions[i].color;   //REPLACED WITH MALTA TEXTURE
+                      
+                    //   Debug.Log(biomeMap[y * mapChunkSize + x]);
                     }
                 }
 
             }
         }
-
+        
         /*
          * Pour chaque region
          *      Générer une carte de place d'arbre selon le minDistance défini dans l'éditeur
@@ -204,6 +268,7 @@ public class MapGenerator : MonoBehaviour
 
         List<PoissonSampleData> poissonDiskSamples = new List<PoissonSampleData>();
 
+
         for (int i = 0; i < regions.Length; i++)
         {
             List<Vector2> poissonDiskSamplesRegion = Noise.GeneratePoissonDiskSampling(seedVegetation, mapChunkSize, mapChunkSize, newPointsCount, regions[i].minDistance);
@@ -211,38 +276,41 @@ public class MapGenerator : MonoBehaviour
             for (int k = 0; k < poissonDiskSamplesRegion.Count; k++)
             {
 
+              //  Color biomeColor = biomeMap[(int)poissonDiskSamplesRegion[k].y * (int)poissonDiskSamplesRegion[k].x];
                 Color biomeColor = biomeMap[(int)poissonDiskSamplesRegion[k].y * mapChunkSize + (int)poissonDiskSamplesRegion[k].x];
-
-                if (biomeColor.Equals(regions[i].color))
+                //Debug.Log("Biome: " + ((Color32)biomeColor).ToString());
+                //Debug.Log("Region: " + ((Color32)regions[i].color).ToString());
+                if (((Color32)biomeColor).Equals((Color32)regions[i].color))
                 {
                     poissonDiskSamples.Add(new PoissonSampleData(poissonDiskSamplesRegion[k], regions[i].vegetationPrefab));
                 }
             }
         }
 
-        return new MapData(myFloatHieghtMap, heightMap, moistureMap, biomeMap, poissonDiskSamples, meshHeightCurve, meshHeightMultiplier);
+
+        return new MapData(heightMap, moistureMap, biomeMap, poissonDiskSamples, meshHeightCurve, meshHeightMultiplier);
 
     }
 
-    MapData GenerateMapDataMine(Vector2 center)
-    {
+   // MapData GenerateMapDataMine(Vector2 center)
+ //   {
 
-        float[,] heightMap = myFloatHieghtMap; //My code
+     //   float[,] heightMap = myFloatHeightMap; //My code
 
 
-        for (int y = 0; y < mapChunkSize; y++)
-        {
-            for (int x = 0; x < mapChunkSize; x++)
-            {
+  //      for (int y = 0; y < mapChunkSize; y++)
+  //      {
+  //          for (int x = 0; x < mapChunkSize; x++)
+  //          {
 
-                float currentHeight = heightMap[x, y];
+    //            float currentHeight = heightMap[x, y];
 
-            }
-        }
+    //        }
+   //     }
 
-        return new MapData(myFloatHieghtMap, heightMap, new float[mapChunkSize,mapChunkSize], new Color[mapChunkSize], new List<PoissonSampleData>(), meshHeightCurve, meshHeightMultiplier);
+   //     return new MapData(myFloatHeightMap, heightMap, new float[mapChunkSize,mapChunkSize], new Color[mapChunkSize], new List<PoissonSampleData>(), meshHeightCurve, meshHeightMultiplier);
 
-    }
+  //  }
 
     void OnValidate() {
         if (lacunarity < 1) {
@@ -278,7 +346,6 @@ public struct TerrainType {
 
 
 public struct MapData {
-    public readonly float[,] myFloatHieghtMap;
     public readonly float[,] heightMap;
     public readonly float[,] moistureMap;
     public readonly Color[] biomeMap;
@@ -286,8 +353,7 @@ public struct MapData {
     public readonly AnimationCurve heightCurve;
     public readonly float heightMultiplier;
 
-    public MapData(float[,] myFloatHieghtMap, float[,] heightMap, float[,] moistureMap, Color[] biomeMap, List<PoissonSampleData> poissonDiskSamples, AnimationCurve heightCurve, float heightMultiplier) {
-        this.myFloatHieghtMap = myFloatHieghtMap;
+    public MapData(float[,] heightMap, float[,] moistureMap, Color[] biomeMap, List<PoissonSampleData> poissonDiskSamples, AnimationCurve heightCurve, float heightMultiplier) {
         this.heightMap = heightMap;
         this.moistureMap = moistureMap;
         this.biomeMap = biomeMap;

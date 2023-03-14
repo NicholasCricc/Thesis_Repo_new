@@ -1,0 +1,14 @@
+(201, 239, 53, 255) - sea (Done)
+
+
+(82, 116, 255, 255) - Forest
+
+(239, 101, 24) - Build up (Done)
+
+(49, 16, 57) - cropland (Done)
+
+(49/53, 170, 247) - grasslands (Done)
+
+(247, 190, 57)
+
+73FF5A light green
