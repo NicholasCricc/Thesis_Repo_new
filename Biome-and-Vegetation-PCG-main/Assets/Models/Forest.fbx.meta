@@ -1,0 +1,246 @@
+fileFormatVersion: 2
+guid: 1488e01ee08b2fe4c98fe1a9f915779a
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Caule.Material
+    second: {fileID: 2100000, guid: 093849e25fd75d1418b781c478a98d27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Folha.Material
+    second: {fileID: 2100000, guid: 6e27e3e79cf19634793959308874068a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaf_01.001
+    second: {fileID: 2100000, guid: cf1c12377ac4e2e49afdb129a90d3ae7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Petiole_01.001
+    second: {fileID: 2100000, guid: 1760995e7e5853d45a61e6a337a4f352, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thuja_Leaf
+    second: {fileID: 2100000, guid: cee073413bdda944cb3e038e72748631, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trunk_01.001
+    second: {fileID: 2100000, guid: 73399327ea8157c42aae30dce3ec5ee0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bark.002
+    second: {fileID: 2100000, guid: d543756f76512a44bb135c75f5e2ff31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bark01.001
+    second: {fileID: 2100000, guid: ed9fb205ff0c83846a653a13d9e65e32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leaf
+    second: {fileID: 2100000, guid: 69655e9db19520f4c8931e3e1f0744a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leaf maple.001
+    second: {fileID: 2100000, guid: 09e31d6e9bafa0d4dbc42bf38179a954, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leaves.001
+    second: {fileID: 2100000, guid: 8d0c2cbef98e3994da95eb987cb4d4a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twig.001
+    second: {fileID: 2100000, guid: 2a1ff93c62cdd8d44ad985bbe1541119, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bark001_diffuse
+    second: {fileID: 2800000, guid: 23d59aa906607e14bb7e8ec647a152a4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bark001_normal
+    second: {fileID: 2800000, guid: ded3dc2d6a4d99e4b91fee5afcb6538d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bark001_roughness
+    second: {fileID: 2800000, guid: 3b1385c947abbdd41bc657a0ab6d461b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MT_PM_V60_Acer_buergerianum_01_Petiole_01_albedo
+    second: {fileID: 2800000, guid: 9cce424409888de4f9ecf7a4f5ab812c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MT_PM_V60_Acer_buergerianum_01_Petiole_01_normal
+    second: {fileID: 2800000, guid: 284f6e00bd263f4458c698514b9f478b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MT_PM_V60_Acer_buergerianum_01_Trunk_01_albedo
+    second: {fileID: 2800000, guid: 6dd05dfdd61fa544fb0489cdbf761513, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MT_PM_V60_Acer_buergerianum_01_Trunk_01_normal
+    second: {fileID: 2800000, guid: d84e82c7b9495d941a15e3774b843b86, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Thuja_Leaf
+    second: {fileID: 2800000, guid: 4636e0aac98a06048bdd8e45a827067e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: alpha maple
+    second: {fileID: 2800000, guid: 608998879b4d30d4e8a7e6d576396d46, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark01_n
+    second: {fileID: 2800000, guid: 95e6b51fe0acb2f4b8691dafcc4212da, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark01_s
+    second: {fileID: 2800000, guid: 779a81b501fd3cf46bc0a9a069abecaa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: leaf maple_n
+    second: {fileID: 2800000, guid: 2f26c2fd6aa38494984e5e376a61b73d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: leaf maple_s
+    second: {fileID: 2800000, guid: 60b2ddcea93d0014494151ccb3211955, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rosa_Color
+    second: {fileID: 2800000, guid: 18e8b08488891b8438dd8bbb30a442b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rosa_NormalMap
+    second: {fileID: 2800000, guid: 1172349652045994dbfe0a13a33b5f7a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rosa_Specular
+    second: {fileID: 2800000, guid: 059e96ca49b54fc41b8a47465b9f33d2, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

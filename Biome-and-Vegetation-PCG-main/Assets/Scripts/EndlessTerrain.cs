@@ -116,6 +116,7 @@ public class EndlessTerrain : MonoBehaviour{
 
             vegetationContainer = new GameObject("Vegetation Container");
             vegetationContainer.transform.parent = meshObject.transform;
+            vegetationContainer.transform.position = vegetationContainer.transform.position + new Vector3(0, 0, 0);
 
 
             lodMeshes = new LODMesh[detailLevels.Length];
@@ -157,7 +158,7 @@ public class EndlessTerrain : MonoBehaviour{
                 float posX = topLeftX + sample.position.x;
                 float treeHeight = mapData.heightCurve.Evaluate(mapData.heightMap[(int)sample.position.x, (int)sample.position.y]) * mapData.heightMultiplier;
                 float posZ = topLeftZ - sample.position.y;
-                vegetations.Add(Instantiate(sample.vegetationPrefab, meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
+                vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
             }
         }
 

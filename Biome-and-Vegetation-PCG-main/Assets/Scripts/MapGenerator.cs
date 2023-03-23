@@ -341,7 +341,7 @@ public struct TerrainType {
     public float moisture;
     public float minDistance;
     public Color color;
-    public GameObject vegetationPrefab;
+    public List<GameObject> vegetationPrefab;
 }
 
 
@@ -365,9 +365,9 @@ public struct MapData {
 
 public struct PoissonSampleData {
     public readonly Vector2 position;
-    public readonly GameObject vegetationPrefab;
+    public readonly List<GameObject> vegetationPrefab;
 
-    public PoissonSampleData(Vector2 position, GameObject vegetationPrefab) {
+    public PoissonSampleData(Vector2 position, List<GameObject> vegetationPrefab) {
         this.position = position;
         this.vegetationPrefab = vegetationPrefab;
     }
