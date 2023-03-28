@@ -57,12 +57,23 @@ public class MapGenerator : MonoBehaviour
     private float[,] newHeightMap;
     Texture2D loadTexture;
     Color[,] textureColors;
+    public float terrainScale;
+
     public void Awake()
     {
         TerrainData tData = myHeightMap.terrainData;
         int xResolution = tData.heightmapResolution;
         int zResolution = tData.heightmapResolution;
         newHeightMap = tData.GetHeights(0, 0, xResolution, zResolution);
+
+        //Acessing each element of the newHeightMap variable
+        for (int x = 0; x < newHeightMap.GetLength(0); x++)
+        {
+            for(int y = 0; y < newHeightMap.GetLength(1); y++)
+            {
+                newHeightMap[x, y] *= terrainScale; //this value is divding the value by half
+            }
+        }
 
         loadTexture = Resources.Load("Boxed_OutputTIF_Colour") as Texture2D;
         //flippedTexture = loadTexture.Rotate(RotateMode.Rotate180);
