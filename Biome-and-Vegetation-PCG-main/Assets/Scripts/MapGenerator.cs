@@ -289,7 +289,7 @@ public class MapGenerator : MonoBehaviour
 
               //  Color biomeColor = biomeMap[(int)poissonDiskSamplesRegion[k].y * (int)poissonDiskSamplesRegion[k].x];
                 Color biomeColor = biomeMap[(int)poissonDiskSamplesRegion[k].y * mapChunkSize + (int)poissonDiskSamplesRegion[k].x];
-                //Debug.Log("Biome: " + ((Color32)biomeColor).ToString());
+                Debug.Log("Biome: " + ((Color32)biomeColor).ToString());
                 //Debug.Log("Region: " + ((Color32)regions[i].color).ToString());
                 if (((Color32)biomeColor).Equals((Color32)regions[i].color))
                 {
