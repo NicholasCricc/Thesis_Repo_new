@@ -158,7 +158,12 @@ public class EndlessTerrain : MonoBehaviour{
                 float posX = topLeftX + sample.position.x;
                 float treeHeight = mapData.heightCurve.Evaluate(mapData.heightMap[(int)sample.position.x, (int)sample.position.y]) * mapData.heightMultiplier;
                 float posZ = topLeftZ - sample.position.y;
-                vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
+                if((posX) > 1 && (posX) < 31 && (posZ) > -97 && (posZ) < -67)
+                {
+                    vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
+                }
+                
+              
             }
         }
 

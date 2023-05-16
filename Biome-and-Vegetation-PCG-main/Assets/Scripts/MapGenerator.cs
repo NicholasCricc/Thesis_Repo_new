@@ -279,7 +279,7 @@ public class MapGenerator : MonoBehaviour
 
         List<PoissonSampleData> poissonDiskSamples = new List<PoissonSampleData>();
 
-
+        Color32 offsetnew = new Color32(10, 10, 10, 10);
         for (int i = 0; i < regions.Length; i++)
         {
             List<Vector2> poissonDiskSamplesRegion = Noise.GeneratePoissonDiskSampling(seedVegetation, mapChunkSize, mapChunkSize, newPointsCount, regions[i].minDistance);
@@ -289,9 +289,23 @@ public class MapGenerator : MonoBehaviour
 
               //  Color biomeColor = biomeMap[(int)poissonDiskSamplesRegion[k].y * (int)poissonDiskSamplesRegion[k].x];
                 Color biomeColor = biomeMap[(int)poissonDiskSamplesRegion[k].y * mapChunkSize + (int)poissonDiskSamplesRegion[k].x];
-                Debug.Log("Biome: " + ((Color32)biomeColor).ToString());
+                //Debug.Log("Biome: " + ((Color32)biomeColor).ToString());
                 //Debug.Log("Region: " + ((Color32)regions[i].color).ToString());
-                if (((Color32)biomeColor).Equals((Color32)regions[i].color))
+                //(((Color32)biomeColor).Equals((Color32)regions[i].color))
+                Color32 b32 = ((Color32)biomeColor);
+
+                Color32 r32 = ((Color32)regions[i].color);
+                Color32 resultlow = new Color32((byte)(r32.r - offsetnew.r),
+                             (byte)(r32.g - offsetnew.g),
+                             (byte)(r32.b - offsetnew.b),
+                             (byte)(r32.a - offsetnew.a));
+
+                Color32 resulthigh = new Color32((byte)(r32.r + offsetnew.r),
+                            (byte)(r32.g + offsetnew.g),
+                            (byte)(r32.b + offsetnew.b),
+                            (byte)(r32.a + offsetnew.a));
+
+                if ( ((byte)b32.r) > resultlow.r && ((byte)b32.g) > resultlow.g && ((byte)b32.b) > resultlow.b && ((byte)b32.a) > resultlow.a)
                 {
                     poissonDiskSamples.Add(new PoissonSampleData(poissonDiskSamplesRegion[k], regions[i].vegetationPrefab));
                 }
