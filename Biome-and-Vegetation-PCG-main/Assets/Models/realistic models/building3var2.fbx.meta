@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4fb0abfca8bf7f24fb949742600baa92
+guid: b80d88d6a90a3ed429e896d11cedbb99
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Facades 05.001
-    second: {fileID: 2100000, guid: 8a57777403c8f7f4bbcd5f7c740c58bc, type: 2}
+      name: atlas
+    second: {fileID: 2100000, guid: 5b047dfc36a37954ba1c539f9cf99086, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: atlas.004
+    second: {fileID: 2100000, guid: ed0c120877dfa374bbc92e670894412c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: atlas.005
+    second: {fileID: 2100000, guid: f3f9d50ca5837b34e9d551ba1f521701, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -40,8 +50,8 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.02
-    meshCompression: 3
+    globalScale: 0.01
+    meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
@@ -93,7 +103,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.02
+    globalScale: 0.0001
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

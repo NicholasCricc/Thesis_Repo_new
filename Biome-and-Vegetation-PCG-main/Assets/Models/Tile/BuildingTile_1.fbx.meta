@@ -1,0 +1,531 @@
+fileFormatVersion: 2
+guid: 2bea02f45b07f43448b0620d73f718a3
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cast Iron
+    second: {fileID: 2100000, guid: 53a16565ab062cf4ea021390b92e8e49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cast Iron Blanched With Rust
+    second: {fileID: 2100000, guid: 166d8eb45c3e7a744904dcbdecd7e927, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cast Iron Blanched With Rust.001
+    second: {fileID: 2100000, guid: ccdd2a6c01e42124ab1c2e8a53a4f8e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cast Iron.001
+    second: {fileID: 2100000, guid: 49c663f00b7899f408c1f4b1f04adf77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome with errosion - procedural
+    second: {fileID: 2100000, guid: b87913bc24fc66a4993c1ea705d9e7dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete material
+    second: {fileID: 2100000, guid: 5667ccf64adf8994dafab75a3728e92f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete material.001
+    second: {fileID: 2100000, guid: c5c1571d547060846be0ab655a9cdccf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete material.002
+    second: {fileID: 2100000, guid: 7d8c28f22673f6f489912c2baa5a4db8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete material.003
+    second: {fileID: 2100000, guid: fdaefeecd028efc449661e7e421edc30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete material.004
+    second: {fileID: 2100000, guid: af2dc56abcc049f43b416e430f282b6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete material.005
+    second: {fileID: 2100000, guid: 967272ff2c3dd7046ad8996c96f13bdb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete material.006
+    second: {fileID: 2100000, guid: 2c4a15c43de8b0147bdc8fd1507a6a9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete material.007
+    second: {fileID: 2100000, guid: 67d4579f44efb2e47a0204d51cbceee5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete material.008
+    second: {fileID: 2100000, guid: 5ae98d03828937149a0c59f0703238d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Facades 03.001
+    second: {fileID: 2100000, guid: 6841cb33d710bc046acb6a3b12a543a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass.001
+    second: {fileID: 2100000, guid: f4ed625e862d69c4f970c3acf146a8de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: bdcf2f847cab6464b85251b1098cc104, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal scratched.001
+    second: {fileID: 2100000, guid: da891b67d61c3be42900c9528368b3e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Old Wood.001
+    second: {fileID: 2100000, guid: 5f54d8190cb0e334c854e4d850d968f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Old Wood.002
+    second: {fileID: 2100000, guid: c18c2d143f1ca5d47b3b16a2d3d4c0ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Old concrete road scan.002
+    second: {fileID: 2100000, guid: daaa5c7cf3a159840af88871504c7550, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Painted Metal Rubbish Bin Green
+    second: {fileID: 2100000, guid: 8d2ecd6baef274f4684e5f63a0b76e42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Painted Metal Rubbish Bin Green.001
+    second: {fileID: 2100000, guid: e0683e888761d6f49b0b65f5eb3f4c3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rust
+    second: {fileID: 2100000, guid: 2395f0ee4eac7b64d86d1856a3f895c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rust.001
+    second: {fileID: 2100000, guid: bab3b0a77bf9bd7439a7b6edb65aa42b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Worn Metal Paint Procedural
+    second: {fileID: 2100000, guid: a9e106960fa723542a188817012187e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Worn Metal Paint Procedural.001
+    second: {fileID: 2100000, guid: afff5396fc8c337469606f932a5f1142, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anisotropy.002
+    second: {fileID: 2100000, guid: bbfd9ec3b27062745ad4850a0115e4f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anisotropy.003
+    second: {fileID: 2100000, guid: 12b1260b288cd714f80b18070dad20af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bench metal
+    second: {fileID: 2100000, guid: c306ca02097601d48829426038fadd92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bench metal.001
+    second: {fileID: 2100000, guid: bba6287f43b9cdf4ebef9b6e7468fe80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bench wood
+    second: {fileID: 2100000, guid: a887065ab15418f4aba4da238eaaeb38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bench wood.001
+    second: {fileID: 2100000, guid: 5160cdb0e0854c34e844fa2232873a73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: color freshnel paint.001
+    second: {fileID: 2100000, guid: d5d617071b8295c4e890969f8cecfd54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: freshnel shader.001
+    second: {fileID: 2100000, guid: 0d11f4b29f724a249a0c8bf8f46b1e00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal paint
+    second: {fileID: 2100000, guid: 05432c023f91faa4c9140018dbe83970, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal paint.001
+    second: {fileID: 2100000, guid: 79e651b5339616740bde460857cc56e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal paint.002
+    second: {fileID: 2100000, guid: b6a9c60618ba1704e9bd9991ca513f7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal paint.003
+    second: {fileID: 2100000, guid: e9685e8e4f37f074297ce85871673313, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal paint.004
+    second: {fileID: 2100000, guid: 59de3e8a1af4d9f41a0ebc5670b9dbd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal paint.005
+    second: {fileID: 2100000, guid: e3ceb30d8f6a7044ba91d46b212e6725, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal paint.006
+    second: {fileID: 2100000, guid: 2a668a8e08ad52e42bbebdccd59a906d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal paint.007
+    second: {fileID: 2100000, guid: 1fb6b8c84967ca5479fc312b489e7486, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal paint.008
+    second: {fileID: 2100000, guid: 1806bea173feeec4a8845112cbc9bdb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metall slide top
+    second: {fileID: 2100000, guid: cdb78369ac9895a4093509e9939e8260, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic.001
+    second: {fileID: 2100000, guid: 03c0e6c6b6491d544b8ee43199ed881f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stand material
+    second: {fileID: 2100000, guid: c8720051d49bc524eb7fc74128ca624e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step rust matrial
+    second: {fileID: 2100000, guid: 6e0cd72ded65f5f4fa7cb19320cb4370, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0411\u0435\u0442\u043E\u043D"
+    second: {fileID: 2100000, guid: e994e9b60ae89f148820483c523fd7fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0414\u0432\u0435\u0440\u0438"
+    second: {fileID: 2100000, guid: a9747cdb27ac29141b4f56bf53b99638, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0414\u0435\u0440\u0435\u0432\u043E \u043F\u043B\u0430\u043D\u043A\u0438"
+    second: {fileID: 2100000, guid: de218224d787b094cae0295e9bf7ee9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041A\u0438\u0440\u043F\u0438\u0447 \u043A\u0440\u0430\u0441\u043D\u044B\u0439"
+    second: {fileID: 2100000, guid: 8b19b4c40dbe1b74e8f46cbd06378cd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0435\u0442\u0430\u043B\u043B \u0447\u0435\u0440\u043D\u044B\u0439"
+    second: {fileID: 2100000, guid: 18023e8fd31dac7438667712973595ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041E\u0431\u0449\u0438\u0432\u043A\u0430 \u043A\u0440\u043E\u0432\u043B\u0438"
+    second: {fileID: 2100000, guid: 383c3a7628dee0e41a27a112349f2ea9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041F\u043B\u0430\u0441\u0442\u0438\u043A \u041A\u043E\u0440"
+    second: {fileID: 2100000, guid: cfeb86b6d848be04bbf77951799db632, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0421\u0442\u0435\u043A\u043B\u043E"
+    second: {fileID: 2100000, guid: 80bddf9d6eb09b84abfdebeacde0a175, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0424\u0438\u043D\u0438\u0448\u043A\u0430"
+    second: {fileID: 2100000, guid: 4a5d28315fb6b3344bd449438b891a44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0425\u0440\u043E\u043C"
+    second: {fileID: 2100000, guid: 938000fb218989246bf8269cd94a0cbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0427\u0435\u0440\u0435\u043F\u0438\u0446\u0430"
+    second: {fileID: 2100000, guid: e0871aab10cecf94e98bab7f252f0097, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0428\u0442\u0443\u043A\u0430\u0442\u0443\u0440\u043A\u0430"
+    second: {fileID: 2100000, guid: 76414107819d9bc48b603d6680239ef3, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1K-brick_wall_7_baseColor
+    second: {fileID: 2800000, guid: 6bd47a1f299cefc4b87bb9000fcc2d80, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1K-brick_wall_7_normal
+    second: {fileID: 2800000, guid: 18975ad2cecaa2c458ffef93734c853e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1K-brick_wall_7_roughness
+    second: {fileID: 2800000, guid: 0f17d8f7e92fea44887269073d288203, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1K-roof_4-diffuse
+    second: {fileID: 2800000, guid: 098119dfe33a3e0408392d01b02cb4c4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1K-roof_4-normal
+    second: {fileID: 2800000, guid: 2ff4b4faa43c55a4da7b49df24a5bf72, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Concrete034_4K_Color
+    second: {fileID: 2800000, guid: 26813031397262e458c1a92f3113c610, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Concrete034_4K_Roughness
+    second: {fileID: 2800000, guid: 193952f4bc3d2d64bbccadbb360b9109, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Grass004_2K_Color
+    second: {fileID: 2800000, guid: 1a060899e56be4f4385a4cfd1ae5c601, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Grass004_2K_Roughness
+    second: {fileID: 2800000, guid: d6edb6d9d9f1c5245a74be62feebd60d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal037_2K_Color
+    second: {fileID: 2800000, guid: deb0df6245851c045b8155ad5dbc18ef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal037_2K_Metalness
+    second: {fileID: 2800000, guid: e296a1a3bbdc1ce449cc3bcec6dff435, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal037_2K_Roughness
+    second: {fileID: 2800000, guid: 40b7e809604997947be1f2f801166b05, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: OldRoad_basecolor
+    second: {fileID: 2800000, guid: bcb1ccf9e09d4eb458aee89b5b508bc1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: OldRoad_normal
+    second: {fileID: 2800000, guid: fb7ca20c33e224e40bd4a93b6eea6921, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: OldRoad_roughness
+    second: {fileID: 2800000, guid: c097b6a32d3e30f49b8bf0cd08e3b5d0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bench photogrammetry2_bench_metal_BaseColor
+    second: {fileID: 2800000, guid: 6bfd0a87237972541bf1d335469c8cb1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bench photogrammetry2_bench_metal_BaseColor000
+    second: {fileID: 2800000, guid: bfe9bc26c79d3624d949c4b925ab0aab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bench photogrammetry2_bench_metal_Normal
+    second: {fileID: 2800000, guid: ccd46a58a673aff4caa1863e92aa4f5a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bench photogrammetry2_bench_metal_Roughness
+    second: {fileID: 2800000, guid: cabaffd5ce9ae414c9a369687c9c94d0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bench photogrammetry2_bench_wood_Metallic
+    second: {fileID: 2800000, guid: b53fa0193aef6f44784e7895e548913a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bench photogrammetry2_bench_wood_Normal
+    second: {fileID: 2800000, guid: 3be7867d590427f41b1c872153cdc709, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bench photogrammetry2_bench_wood_Roughness
+    second: {fileID: 2800000, guid: 3ad543b08631bcf4b90bd33dd86fbd67, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_plank_wall_diff_1k
+    second: {fileID: 2800000, guid: 6e942a539bbc13c47be7239150a5b8f0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_plank_wall_nor_gl_1k
+    second: {fileID: 2800000, guid: 17256a233019482499b67c68ee6472e7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_plank_wall_rough_1k
+    second: {fileID: 2800000, guid: 83e411fa5bf55bd47881fea2864afb94, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 3
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,20 @@
+Min disance overall '0.35'
+
+
+Malta and Gozo texture based buildings 
+
+Time to render: 34 seconds
+
+Screenshots:
+
+CPU Usage
+
+
+GPU Usage
+
+
+Rendering
+
+
+Memory
+
