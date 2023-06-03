@@ -159,13 +159,13 @@ public class EndlessTerrain : MonoBehaviour{
                 float treeHeight = mapData.heightCurve.Evaluate(mapData.heightMap[(int)sample.position.x, (int)sample.position.y]) * mapData.heightMultiplier;
                 float posZ = topLeftZ - sample.position.y;
 
-                vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
+                //vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
 
                 //Part of Rabat for demo
-                //if ((posX) > 16 && (posX) < 21 && (posZ) > -88 && (posZ) < -85)
-                //    {
-                //        vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
-                //    }
+                if ((posX) > 16 && (posX) < 21 && (posZ) > -88 && (posZ) < -85)
+                {
+                    vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
+                }
 
                 //1km
                 //if ((posX) > 93 && (posX) < 103 && (posZ) > -62 && (posZ) < -50)
@@ -197,6 +197,29 @@ public class EndlessTerrain : MonoBehaviour{
                 //    vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
                 //}
 
+                //200m
+                //if ((posX) > 119.43 && (posX) < 120.636 && (posZ) > -70.259 && (posZ) < -68.88)
+                //{
+                //    vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
+                //}
+
+                //600m
+                //if ((posX) > 118.9 && (posX) < 124.18 && (posZ) > -76 && (posZ) < -70.72)
+                //{
+                //    vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
+                //}
+
+                //1000m
+                //if ((posX) > 119.43 && (posX) < 124.315 && (posZ) > -80.24 && (posZ) < -68.88)
+                //{
+                //    vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
+                //}
+
+                //1400m
+                //if ((posX) > 119.43 && (posX) < 128.51 && (posZ) > -81.97 && (posZ) < -68.88)
+                //{
+                //    vegetations.Add(Instantiate(sample.vegetationPrefab[UnityEngine.Random.Range(0, sample.vegetationPrefab.Count)], meshObject.transform.position + new Vector3(posX, treeHeight, posZ), Quaternion.identity, vegetationContainer.transform));
+                //}
             }
         }
 
